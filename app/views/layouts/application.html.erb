@@ -27,9 +27,15 @@
 		</div>
 	</nav>
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-
+	<% flash.each do |type, message| %>
+		<div class="alert <%= bootstrap_class_for(type) %> alert-dismissable" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <%= message.html_safe %>
+		</div>
+	<% end %>
+	<!-- <div class="alert alert-success" role="alert"><%= notice %></div>
+	<div class="alert alert-warning" role="alert"><%= alert %></div>
+ -->
 	<div class="container">
 	<%= yield %>
 	</div>
