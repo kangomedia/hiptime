@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-	before_action :find_item, only: [:show, :edit, :update, :destroy]
+	before_action :find_item, only: [:show, :edit, :update, :destroy, :complete]
 
 	def index
 		if user_signed_in?
